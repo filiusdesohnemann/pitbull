@@ -1,22 +1,32 @@
-const fakten = [
-  "Die Rasse geht auf Lord Tweedmouth zurück, der sie ab 1865 auf seinem Landgut in Schottland züchtete.",
-  "Das Fell ist wasserabweisend, deshalb schwimmen viele Goldens sehr gern.",
-  "Golden Retriever tragen Gegenstände gern im Maul, oft auch ihre Lieblingsspielzeuge.",
-  "Die Fellfarbe reicht von hellcreme bis dunkelgold.",
-  "Der Haarwechsel ist stark. Regelmäßiges Bürsten hilft.",
-  "Die Rasse ist anfällig für Hüftgelenksdysplasie. Seriöse Züchter lassen die Elterntiere untersuchen.",
-  "Goldens werden oft als Blindenführ- und Therapiehunde eingesetzt."
+const themen = [
+  {
+    titel: "Geschichte",
+    text: "Woher die Rasse kommt und wer sie gezüchtet hat.",
+    link: "geschichte.html"
+  },
+  {
+    titel: "Pflege",
+    text: "Fell, Bürsten, Baden und Ernährung.",
+    link: "pflege.html"
+  },
+  {
+    titel: "Erziehung",
+    text: "Wie du einen Welpen gut erziehst und beschäftigst.",
+    link: "erziehung.html"
+  },
+  {
+    titel: "Gesundheit",
+    text: "Typische Krankheiten und worauf du achten solltest.",
+    link: "gesundheit.html"
+  }
 ];
 
-const text = document.getElementById("fakt");
-const knopf = document.getElementById("knopf");
-let letzter = -1;
+const container = document.getElementById("karten");
 
-knopf.addEventListener("click", function () {
-  let i;
-  do {
-    i = Math.floor(Math.random() * fakten.length);
-  } while (i === letzter);
-  letzter = i;
-  text.textContent = fakten[i];
+themen.forEach(function (t) {
+  const a = document.createElement("a");
+  a.className = "karte";
+  a.href = t.link;
+  a.innerHTML = "<h3>" + t.titel + "</h3><p>" + t.text + "</p>";
+  container.appendChild(a);
 });

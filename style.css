@@ -1,24 +1,129 @@
+:root {
+  --text: #2e2418;
+  --backround: #e0c59b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  max-width: 38rem;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  font-family: Georgia, serif;
+  margin: 0;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: 1.1rem;
   line-height: 1.6;
-  color: #222;
+  color: var(--text);
   background: #fff;
 }
 
+h1, h2, .logo {
+  font-family: Bitter, Georgia, serif;
+}
+
+/* Navigation */
+.kopf {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 2px solid var(--gold);
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover,
+nav a.aktiv {
+  border-bottom-color: var(--gold);
+}
+
+/* Inhalt */
+main {
+  max-width: 48rem;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+}
+
 h1 {
-  font-size: 2rem;
+  margin: 0 0 1rem;
+  font-size: 2.2rem;
+  line-height: 1.2;
 }
 
 h2 {
-  margin-top: 2rem;
-  font-size: 1.25rem;
+  margin: 2.5rem 0 1rem;
+  font-size: 1.4rem;
 }
 
-button {
-  font: inherit;
-  padding: 0.3rem 0.8rem;
-  cursor: pointer;
+.einleitung {
+  max-width: 38rem;
+}
+
+/* Karten */
+.karten {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.karte {
+  display: block;
+  padding: 1rem 1.1rem;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid var(--linie);
+  border-radius: 4px;
+}
+
+.karte h3 {
+  margin: 0 0 0.3rem;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.1rem;
+}
+
+.karte p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.karte:hover {
+  border-color: var(--gold);
+}
+
+.karte:hover h3 {
+  text-decoration: underline;
+}
+
+.karte:focus-visible,
+nav a:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Fußzeile */
+.fuss {
+  max-width: 48rem;
+  margin: 3rem auto 2rem;
+  padding: 1rem 1.5rem 0;
+  border-top: 1px solid var(--linie);
+  font-size: 0.95rem;
 }
